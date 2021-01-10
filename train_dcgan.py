@@ -165,7 +165,7 @@ def main():
 
         RANDOM_generated_image(
             gen, dis,
-            20, 20, a   rgs.seed, args.out, trainer.updater.iteration)
+            20, 20, args.seed, args.out, trainer.updater.iteration)
 
         WALKING_generated_image(
             gen, dis,
