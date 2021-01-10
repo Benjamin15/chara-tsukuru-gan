@@ -22,7 +22,7 @@ def main():
     parser = argparse.ArgumentParser(description='Chainer example: DCGAN')
     parser.add_argument('--batchsize', '-b', type=int, default=50,
                         help='Number of images in each mini-batch')
-    parser.add_argument('--epoch', '-e', type=int, default=100000,
+    parser.add_argument('--epoch', '-e', type=int, default=10000,
                         help='Number of sweeps over the dataset to train')
     parser.add_argument('--gpu', '-g', type=int, default=0,
                         help='GPU ID (negative value indicates CPU)')
@@ -130,7 +130,7 @@ def main():
         # Resume from a snapshot
         chainer.serializers.load_npz(args.resume, trainer)
 
-    if args.print:
+    elif args.print:
         # Load the snapshot
         chainer.serializers.load_npz(args.print, trainer)
         print(args.print)
@@ -144,7 +144,7 @@ def main():
                 gen, dis,
                 8, 8, args.seed, args.out, idx)
 
-    if args.print_pan:
+    elif args.print_pan:
         # Load the snapshot
         chainer.serializers.load_npz(args.print_pan, trainer)
         print(args.print_pan)
@@ -158,14 +158,14 @@ def main():
                 gen, dis,
                 8, 8, args.seed, args.out, idx)
 
-    if args.print_walk:
+    elif args.print_walk:
         # Load the snapshot
         chainer.serializers.load_npz(args.print_walk, trainer)
         print(args.print_walk)
 
         RANDOM_generated_image(
             gen, dis,
-            20, 20, args.seed, args.out, trainer.updater.iteration)
+            20, 20, a   rgs.seed, args.out, trainer.updater.iteration)
 
         WALKING_generated_image(
             gen, dis,
